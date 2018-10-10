@@ -1,0 +1,53 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "babel-node ./src/server.js",
+    "dev:watch": "nodemon --exec npm run dev",
+    "start": "npm run dev:watch",
+    "prebuild": "rimraf dist",
+    "build": "babel src --out-dir dist --source-maps --copy-files",
+    "start:dist": "node ./dist/server.js"
+  },
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.0",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "helmet": "^3.9.0",
+    "jsonwebtoken": "^8.2.1",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "serve-static": "^1.13.2",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.17.5",
+    "rimraf": "^2.6.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }
+}
